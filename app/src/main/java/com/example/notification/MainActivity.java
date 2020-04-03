@@ -38,22 +38,21 @@ public class MainActivity extends AppCompatActivity {
     @TargetApi(Build.VERSION_CODES.O)
     public void registerNormalNotificationChannel(android.app.NotificationManager notificationManager) {
 
-        NotificationChannel channel_all = new NotificationChannel(getString(R.string.CHANNEL_ID_ALL), getString(R.string.CHANNEL_NAME_ALL), NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationChannel channel_all = new NotificationChannel("CHANNEL_ID_ALL", "CHANNEL_NAME_ALL", NotificationManager.IMPORTANCE_HIGH);
         channel_all.enableVibration(true);
         notificationManager.createNotificationChannel(channel_all);
 
-
-        NotificationChannel channel_sound = new NotificationChannel(getString(R.string.CHANNEL_ID_SOUND), getString(R.string.CHANNEL_NAME_SOUND), NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationChannel channel_sound = new NotificationChannel("CHANNEL_ID_SOUND", "CHANNEL_NAME_ALL", NotificationManager.IMPORTANCE_HIGH);
         channel_sound.enableVibration(false);
         notificationManager.createNotificationChannel(channel_sound);
 
-        NotificationChannel channel_vibrate = new NotificationChannel(getString(R.string.CHANNEL_ID_VIBRATE), getString(R.string.CHANNEL_NAME_VIBRATE), NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationChannel channel_vibrate = new NotificationChannel("CHANNEL_ID_VIBRATE", "CHANNEL_NAME_ALL", NotificationManager.IMPORTANCE_HIGH);
         channel_vibrate.setSound(null, null);
         channel_vibrate.enableVibration(true);
         notificationManager.createNotificationChannel(channel_vibrate);
 
 
-        NotificationChannel channel_none = new NotificationChannel(getString(R.string.CHANNEL_ID_NONE), getString(R.string.CHANNEL_NAME_NONE), NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationChannel channel_none = new NotificationChannel("CHANNEL_ID_NONE", "CHANNEL_NAME_ALL", NotificationManager.IMPORTANCE_HIGH);
         channel_none.setSound(null, null);
         channel_none.enableVibration(false);
         notificationManager.createNotificationChannel(channel_none);
@@ -111,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentText("Welcome to Android");
 
-        Intent intent = new Intent(MainActivity.this, ActivityOne.class);
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -135,13 +134,13 @@ public class MainActivity extends AppCompatActivity {
 
     private String getChannelId() {
         if (shouldSound && shouldVibrate) {
-            return getString(R.string.CHANNEL_ID_ALL);
+            return "CHANNEL_ID_ALL";
         } else if (shouldSound && !shouldVibrate) {
-            return getString(R.string.CHANNEL_ID_SOUND);
+            return "CHANNEL_ID_SOUND";
         } else if (!shouldSound && shouldVibrate) {
-            return getString(R.string.CHANNEL_ID_VIBRATE);
+            return "CHANNEL_ID_VIBRATE";
         } else {
-            return getString(R.string.CHANNEL_ID_NONE);
+            return "CHANNEL_ID_NONE";
         }
     }
 
