@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Notification</string>
+    <string name="CHANNEL_ID_ALL">CHANNEL_ID_ALL</string>
+    <string name="CHANNEL_ID_SOUND">CHANNEL_ID_SOUND</string>
+    <string name="CHANNEL_ID_VIBRATE">CHANNEL_ID_VIBRATE</string>
+    <string name="CHANNEL_ID_NONE">CHANNEL_ID_NONE</string>
+
+    <string name="CHANNEL_NAME_ALL">CHANNEL_NAME_ALL</string>
+    <string name="CHANNEL_NAME_SOUND">CHANNEL_NAME_SOUND</string>
+    <string name="CHANNEL_NAME_VIBRATE">CHANNEL_NAME_VIBRATE</string>
+    <string name="CHANNEL_NAME_NONE">CHANNEL_NAME_NONE</string>
+
+</resources>
